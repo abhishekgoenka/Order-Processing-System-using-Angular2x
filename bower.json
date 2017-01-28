@@ -1,0 +1,28 @@
+{
+  "name": "order-processing-system",
+  "description": "A sample application to process orders",
+  "main": "index.js",
+  "authors": [
+    "Abhishek Goenka"
+  ],
+  "license": "MIT ISE",
+  "keywords": [
+    "Angular",
+    "Order Processing System",
+    "JavaScript"
+  ],
+  "homepage": "https://github.com/abhishekgoenka/Order-Processing-System-using-Angular2x",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "jquery-validation": "^1.16.0",
+    "font-awesome": "git://github.com/FortAwesome/Font-Awesome#^4.7.0"
+  }
+}
