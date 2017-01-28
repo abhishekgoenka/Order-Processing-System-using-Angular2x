@@ -57,6 +57,7 @@
     "globals": {
         "angular": false,
         "$": false,
-        "jQuery": false
+        "jQuery": false,
+        "System": false
     }
 }
