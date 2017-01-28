@@ -1,5 +1,6 @@
 # Order Processing System using Angular2
 Order Processing sample application developed in Angular2. This application uses typescrip.
+
 ![Screenshot](/.github/screenshot.png)
 
 # Downloading and installing node.js
