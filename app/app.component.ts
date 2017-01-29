@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'ops-app',
-    template: '<h1> Angular getting started </h1>'
+    template: '<ops-dashboard> loading... </ops-dashboard>'
 })
 
 export class AppComponent {
