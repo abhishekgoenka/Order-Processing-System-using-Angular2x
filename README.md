@@ -1,5 +1,5 @@
 # Order Processing System using Angular2
-Order Processing sample application developed in Angular2. This application uses typescrip.
+Order Processing sample application developed in Angular2. This application uses Typescript.
 
 ![Screenshot](/.github/screenshot.png)
 
