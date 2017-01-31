@@ -1,5 +1,12 @@
 {
     "typescript.tsdk": "./node_modules/typescript/lib",
     "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.map": true
+    }
 }

@@ -18,7 +18,7 @@
                     <div class="list-group" *ngIf='pendingOrders && pendingOrders.length'>
                         <a href="#" class="list-group-item" *ngFor='let order of pendingOrders'>
                             <h4 class="list-group-item-heading">{{order.item}}
-                                <span class="pull-right"> {{'Last Updated: ' + order.LastUpdatedDTTM}}</span></h4>
+                                <span class="pull-right"> {{'Last Updated: ' + order.lastUpdatedDTTM}}</span></h4>
                             <p class="list-group-item-text">{{order.description}}
                                 <br>
                             </p>
