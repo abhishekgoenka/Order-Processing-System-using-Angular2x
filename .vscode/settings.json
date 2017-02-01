@@ -7,6 +7,6 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/.map": true
+        "**/**/.map": true
     }
 }

@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component'
+import { CoolestProductComponent } from './shared/coolestproduct/coolestproduct.component'
+import { IdeaCenterComponent } from './shared/ideacenter/ideacenter.component'
 //import { WelcomeComponent } from './home/welcome.component';
 
 /* Feature Modules */
@@ -16,7 +18,9 @@ import { DashboardComponent } from './dashboard/dashboard.component'
   ],
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    CoolestProductComponent,
+    IdeaCenterComponent
   ],
   bootstrap: [AppComponent]
 })
