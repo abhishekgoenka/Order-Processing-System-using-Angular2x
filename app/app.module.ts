@@ -14,7 +14,8 @@ import { IdeaCenterComponent } from './shared/ideacenter/ideacenter.component'
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
