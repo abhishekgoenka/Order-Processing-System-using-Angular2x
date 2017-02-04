@@ -6,7 +6,8 @@ import { DashBoardService } from './dashboard/dashboard.service'
 
 @Component({
     selector: 'ops-app',
-    template: '<ops-dashboard> loading... </ops-dashboard>',
+    //template: '<ops-dashboard> loading... </ops-dashboard>',
+    templateUrl : 'app/shared/routes/routes.shared.html',
     providers: [DashBoardService]
 })
 
