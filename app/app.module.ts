@@ -15,6 +15,8 @@ import { NewOrderComponent } from './order/orderNew/newOrder.component'
 import { NewItemComponent } from './inventory/newItem/newItem.component'
 import { CurrentInventoryComponent } from './inventory/currentInventory/currentInventory.component'
 
+import { InvalidRouteGuardService } from './shared/invalidroute.service'
+
 /* Feature Modules */
 //import { ProductModule } from './products/product.module';
 
@@ -27,6 +29,8 @@ import { CurrentInventoryComponent } from './inventory/currentInventory/currentI
       { path: 'clients', component: AllClientComponent },
       { path: 'newClient', component: NewClientComponent },
       { path: 'neworder', component: NewOrderComponent },
+      { path: 'pendingorders', canActivate: [ InvalidRouteGuardService ],  component: NewOrderComponent },
+      { path: 'orderhistory',  canActivate: [ InvalidRouteGuardService ], component: NewOrderComponent },
       { path: 'newitem', component: NewItemComponent },
       { path: 'inventory', component: CurrentInventoryComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
@@ -43,6 +47,7 @@ import { CurrentInventoryComponent } from './inventory/currentInventory/currentI
     NewItemComponent,
     CurrentInventoryComponent
   ],
+  providers: [ InvalidRouteGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
