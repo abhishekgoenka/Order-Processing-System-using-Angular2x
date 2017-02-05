@@ -3,7 +3,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-    templateUrl: 'app/NewClient/newClient.component.html'
+    templateUrl: 'app/client/clientNew/newClient.component.html'
 })
 
 export class NewClientComponent {
