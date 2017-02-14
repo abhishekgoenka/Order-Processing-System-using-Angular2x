@@ -10,9 +10,13 @@ As you know node.js and npm are the engines that work behind the scenes that all
 Download all the packages using following commands before you start
 >npm update
 
-# Run Application
+# Run Application(Development Mode)
 Use following start node server as well as compile all Typescript files to JavaScript
 >npm start
+
+# Build Application
+Use the following command to build the project. This will create a new build folder and copy all the dependencies. Build command will also minify JavaScript and CSS files. 
+>gulp build
 
 # Issues & Solutions
 If you get following error, then it means that 3001(default) port is already used. You can change the port number from "_\node_modules\lite-server\lib\config-defaults.js_" file
