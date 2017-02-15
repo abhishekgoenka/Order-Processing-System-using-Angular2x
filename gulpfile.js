@@ -11,11 +11,16 @@ var $ = require('gulp-load-plugins')({
 gulp.task('help', $.taskListing);
 // This will run in this order:
 // * build-clean
-// * build-scripts, build-styles, build-external-styles and build-external-scripts in parallel
-// * build-html
+// * build-scripts, build-styles, build-bowerDependencies and build-nodeDependencies in parallel
+// * build-server-api 
+// * build-static-resources
+// * servebuild
 // * Finally call the callback function
 gulp.task('build', function (callback) {
-    runSequence('build-clean', ['build-scripts', 'build-styles', 'build-external-styles', 'build-external-scripts'],
+    runSequence('build-clean', ['build-scripts', 'build-styles', 'build-bowerDependencies', 'build-nodeDependencies'],
+        'build-server-api',
+        'build-static-resources',
+        'servebuild',
         callback);
 });
 /**
@@ -32,7 +37,7 @@ gulp.task('build-clean', function () {
 gulp.task('build-scripts', function () {
     log('Building JavaScript files...');
     return gulp.src(config.jsfiles)
-        .pipe(gulp.dest(config.build + 'app'));
+        .pipe(gulp.dest(config.build));
 });
 /**
  * Build styles files
@@ -43,20 +48,48 @@ gulp.task('build-styles', function () {
         .pipe(gulp.dest(config.build + 'app'));
 });
 /**
- * Build vender styles files
+ * Build bower dependencies
  */
-gulp.task('build-external-styles', function () {
-    log('Building external CSS files...');
-    return gulp.src(config.vendercssfiles)
+gulp.task('build-bowerDependencies', function () {
+    log('Building bower dependencies ...');
+    return gulp.src(config.bowerDependencies)
         .pipe(gulp.dest(config.build));
 });
 /**
- * Build Vender JavaScript files
+ * Build node dependencies 
  */
-gulp.task('build-external-scripts', function () {
-    log('Building external JavaScript files...');
-    return gulp.src(config.venderjsfiles)
+gulp.task('build-nodeDependencies', function () {
+    log('Building node dependencies...');
+    return gulp.src(config.nodeDependencies)
         .pipe(gulp.dest(config.build));
+});
+/**
+ * Build API folder
+ */
+gulp.task('build-server-api', function () {
+    log('Building server APIs ...');
+    return gulp.src('./api/**/*.*')
+        .pipe(gulp.dest(config.build + 'api/'));
+});
+/**
+ * Build static resources
+ */
+gulp.task('build-static-resources', function () {
+    log('Building static resources...');
+    return gulp.src(config.staticFiles)
+        .pipe(gulp.dest(config.build));
+});
+/**
+ * Web serve (build)
+ */
+gulp.task('servebuild', function () {
+    gulp.src('build').pipe($.webserver({
+        host: '127.0.0.1',
+        livereload: true,
+        directoryListing: false,
+        open: true,
+        fallback: 'build\index.html'
+    }));
 });
 /**
  * Log a message or series of messages using chalk's blue color.
